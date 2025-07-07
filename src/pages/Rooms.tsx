@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Home, MapPin, DollarSign, Users, Search, Filter } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// Mock data for rooms
+// Enhanced mock data for rooms with 15+ listings
 const mockRooms = [
   {
     id: 1,
@@ -45,6 +44,186 @@ const mockRooms = [
     image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=300&fit=crop",
     availableFrom: "March 15, 2024",
     roommates: 1
+  },
+  {
+    id: 4,
+    title: "Modern Studio Apartment",
+    location: "Arts District",
+    rent: 950,
+    type: "Studio",
+    amenities: ["Wi-Fi", "Kitchen", "Laundry", "Parking"],
+    description: "Stylish studio perfect for creative professionals in the heart of arts district.",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    availableFrom: "April 1, 2024",
+    roommates: 0
+  },
+  {
+    id: 5,
+    title: "Bright Room in Family Home",
+    location: "Suburbs, Quiet Neighborhood",
+    rent: 550,
+    type: "Private Room",
+    amenities: ["Wi-Fi", "Garden", "Parking", "Kitchen"],
+    description: "Peaceful room in a family home with garden access and quiet surroundings.",
+    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop",
+    availableFrom: "March 10, 2024",
+    roommates: 2
+  },
+  {
+    id: 6,
+    title: "Loft Room with Exposed Brick",
+    location: "Industrial District",
+    rent: 850,
+    type: "Private Room",
+    amenities: ["Wi-Fi", "High Ceilings", "Kitchen", "Storage"],
+    description: "Unique loft space with character, exposed brick walls and industrial charm.",
+    image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=400&h=300&fit=crop",
+    availableFrom: "February 20, 2024",
+    roommates: 1
+  },
+  {
+    id: 7,
+    title: "Beachside Room with Ocean View",
+    location: "Coastal Area",
+    rent: 1100,
+    type: "Private Room",
+    amenities: ["Wi-Fi", "Ocean View", "Beach Access", "Balcony"],
+    description: "Wake up to ocean views every day in this beautiful beachside location.",
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&h=300&fit=crop",
+    availableFrom: "March 5, 2024",
+    roommates: 2
+  },
+  {
+    id: 8,
+    title: "Minimalist Room in Tech Hub",
+    location: "Tech District",
+    rent: 900,
+    type: "Private Room",
+    amenities: ["Wi-Fi", "Desk Space", "Meeting Room", "Coffee Bar"],
+    description: "Clean, modern room perfect for tech professionals with workspace amenities.",
+    image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400&h=300&fit=crop",
+    availableFrom: "April 10, 2024",
+    roommates: 3
+  },
+  {
+    id: 9,
+    title: "Vintage Room in Historic Building",
+    location: "Old Town",
+    rent: 700,
+    type: "Private Room",
+    amenities: ["Wi-Fi", "Historic Features", "Courtyard", "Kitchen"],
+    description: "Charming room in a historic building with original architectural features.",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    availableFrom: "March 20, 2024",
+    roommates: 2
+  },
+  {
+    id: 10,
+    title: "Garden Room with Private Entrance",
+    location: "Green District",
+    rent: 750,
+    type: "Private Room",
+    amenities: ["Wi-Fi", "Private Entrance", "Garden", "Kitchenette"],
+    description: "Independent room with private entrance and access to beautiful garden.",
+    image: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=400&h=300&fit=crop",
+    availableFrom: "February 25, 2024",
+    roommates: 1
+  },
+  {
+    id: 11,
+    title: "Penthouse Room with Terrace",
+    location: "Downtown Skyline",
+    rent: 1400,
+    type: "Private Room",
+    amenities: ["Wi-Fi", "Terrace", "City Views", "Elevator", "Gym"],
+    description: "Luxurious penthouse room with private terrace and panoramic city views.",
+    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&h=300&fit=crop",
+    availableFrom: "April 5, 2024",
+    roommates: 1
+  },
+  {
+    id: 12,
+    title: "Cozy Attic Room",
+    location: "Historic District",
+    rent: 650,
+    type: "Private Room",
+    amenities: ["Wi-Fi", "Skylight", "Storage", "Kitchen"],
+    description: "Charming attic room with skylights and cozy atmosphere in historic area.",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    availableFrom: "March 12, 2024",
+    roommates: 2
+  },
+  {
+    id: 13,
+    title: "Room in Eco-Friendly House",
+    location: "Green Valley",
+    rent: 680,
+    type: "Private Room",
+    amenities: ["Wi-Fi", "Solar Power", "Garden", "Composting"],
+    description: "Sustainable living in an eco-friendly house with green technologies.",
+    image: "https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=400&h=300&fit=crop",
+    availableFrom: "February 28, 2024",
+    roommates: 3
+  },
+  {
+    id: 14,
+    title: "Artist's Room in Creative Space",
+    location: "Arts Quarter",
+    rent: 800,
+    type: "Private Room",
+    amenities: ["Wi-Fi", "Art Studio", "Natural Light", "Gallery Access"],
+    description: "Perfect for artists! Room in a creative hub with studio space and gallery.",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    availableFrom: "March 8, 2024",
+    roommates: 4
+  },
+  {
+    id: 15,
+    title: "Room Near Shopping Center",
+    location: "Commercial District",
+    rent: 720,
+    type: "Shared Room",
+    amenities: ["Wi-Fi", "Shopping Access", "Food Court", "Parking"],
+    description: "Convenient location next to major shopping center with easy access to amenities.",
+    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop",
+    availableFrom: "April 15, 2024",
+    roommates: 2
+  },
+  {
+    id: 16,
+    title: "Room in Student Co-op",
+    location: "University Area",
+    rent: 500,
+    type: "Shared Room",
+    amenities: ["Wi-Fi", "Study Rooms", "Common Kitchen", "Library"],
+    description: "Affordable student housing with cooperative living and study facilities.",
+    image: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=400&h=300&fit=crop",
+    availableFrom: "February 18, 2024",
+    roommates: 5
+  },
+  {
+    id: 17,
+    title: "Executive Room in Business District",
+    location: "Financial Center",
+    rent: 1300,
+    type: "Private Room",
+    amenities: ["Wi-Fi", "Business Center", "Concierge", "Gym", "Spa"],
+    description: "Premium accommodation for business professionals with executive amenities.",
+    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=300&fit=crop",
+    availableFrom: "March 25, 2024",
+    roommates: 1
+  },
+  {
+    id: 18,
+    title: "Room in Converted Warehouse",
+    location: "Creative District",
+    rent: 880,
+    type: "Private Room",
+    amenities: ["Wi-Fi", "High Ceilings", "Industrial Design", "Workspace"],
+    description: "Unique living space in converted warehouse with industrial aesthetic.",
+    image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=400&h=300&fit=crop",
+    availableFrom: "April 8, 2024",
+    roommates: 3
   }
 ];
 
@@ -126,6 +305,9 @@ const Rooms = () => {
                   <SelectItem value="downtown">Downtown</SelectItem>
                   <SelectItem value="university">University District</SelectItem>
                   <SelectItem value="uptown">Uptown</SelectItem>
+                  <SelectItem value="coastal">Coastal Area</SelectItem>
+                  <SelectItem value="tech">Tech District</SelectItem>
+                  <SelectItem value="arts">Arts District</SelectItem>
                 </SelectContent>
               </Select>
               <Select value={priceRange} onValueChange={setPriceRange}>
@@ -147,6 +329,7 @@ const Rooms = () => {
                   <SelectItem value="">All Types</SelectItem>
                   <SelectItem value="Private Room">Private Room</SelectItem>
                   <SelectItem value="Shared Room">Shared Room</SelectItem>
+                  <SelectItem value="Studio">Studio</SelectItem>
                 </SelectContent>
               </Select>
             </div>
