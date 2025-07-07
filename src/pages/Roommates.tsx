@@ -74,12 +74,12 @@ const Roommates = () => {
   const filteredRoommates = mockRoommates.filter(roommate => {
     const matchesSearch = roommate.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          roommate.profession.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesBudget = !budgetRange || 
+    const matchesBudget = !budgetRange || budgetRange === "all" ||
                          (budgetRange === "low" && roommate.budget < 700) ||
                          (budgetRange === "medium" && roommate.budget >= 700 && roommate.budget < 1000) ||
                          (budgetRange === "high" && roommate.budget >= 1000);
-    const matchesLifestyle = !lifestyle || roommate.lifestyle === lifestyle;
-    const matchesLocation = !location || roommate.location.toLowerCase().includes(location.toLowerCase());
+    const matchesLifestyle = !lifestyle || lifestyle === "all" || roommate.lifestyle === lifestyle;
+    const matchesLocation = !location || location === "all" || roommate.location.toLowerCase().includes(location.toLowerCase());
     
     return matchesSearch && matchesBudget && matchesLifestyle && matchesLocation;
   });
@@ -139,7 +139,7 @@ const Roommates = () => {
                   <SelectValue placeholder="Location" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Locations</SelectItem>
+                  <SelectItem value="all">All Locations</SelectItem>
                   <SelectItem value="downtown">Downtown</SelectItem>
                   <SelectItem value="university">University District</SelectItem>
                   <SelectItem value="uptown">Uptown</SelectItem>
@@ -151,7 +151,7 @@ const Roommates = () => {
                   <SelectValue placeholder="Budget Range" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Budgets</SelectItem>
+                  <SelectItem value="all">All Budgets</SelectItem>
                   <SelectItem value="low">Under $700</SelectItem>
                   <SelectItem value="medium">$700 - $1000</SelectItem>
                   <SelectItem value="high">$1000+</SelectItem>
@@ -162,7 +162,7 @@ const Roommates = () => {
                   <SelectValue placeholder="Lifestyle" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Lifestyles</SelectItem>
+                  <SelectItem value="all">All Lifestyles</SelectItem>
                   <SelectItem value="Student">Student</SelectItem>
                   <SelectItem value="Professional">Professional</SelectItem>
                   <SelectItem value="Creative">Creative</SelectItem>

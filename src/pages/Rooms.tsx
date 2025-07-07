@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -236,12 +237,12 @@ const Rooms = () => {
   const filteredRooms = mockRooms.filter(room => {
     const matchesSearch = room.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          room.location.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesPrice = !priceRange || 
+    const matchesPrice = !priceRange || priceRange === "all" ||
                         (priceRange === "low" && room.rent < 700) ||
                         (priceRange === "medium" && room.rent >= 700 && room.rent < 1000) ||
                         (priceRange === "high" && room.rent >= 1000);
-    const matchesType = !roomType || room.type === roomType;
-    const matchesLocation = !location || room.location.toLowerCase().includes(location.toLowerCase());
+    const matchesType = !roomType || roomType === "all" || room.type === roomType;
+    const matchesLocation = !location || location === "all" || room.location.toLowerCase().includes(location.toLowerCase());
     
     return matchesSearch && matchesPrice && matchesType && matchesLocation;
   });
@@ -301,7 +302,7 @@ const Rooms = () => {
                   <SelectValue placeholder="Location" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Locations</SelectItem>
+                  <SelectItem value="all">All Locations</SelectItem>
                   <SelectItem value="downtown">Downtown</SelectItem>
                   <SelectItem value="university">University District</SelectItem>
                   <SelectItem value="uptown">Uptown</SelectItem>
@@ -315,7 +316,7 @@ const Rooms = () => {
                   <SelectValue placeholder="Price Range" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Prices</SelectItem>
+                  <SelectItem value="all">All Prices</SelectItem>
                   <SelectItem value="low">Under $700</SelectItem>
                   <SelectItem value="medium">$700 - $1000</SelectItem>
                   <SelectItem value="high">$1000+</SelectItem>
@@ -326,7 +327,7 @@ const Rooms = () => {
                   <SelectValue placeholder="Room Type" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Types</SelectItem>
+                  <SelectItem value="all">All Types</SelectItem>
                   <SelectItem value="Private Room">Private Room</SelectItem>
                   <SelectItem value="Shared Room">Shared Room</SelectItem>
                   <SelectItem value="Studio">Studio</SelectItem>
