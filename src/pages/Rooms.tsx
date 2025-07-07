@@ -113,7 +113,7 @@ const mockRooms = [
     type: "Private Room",
     amenities: ["Wi-Fi", "Historic Features", "Courtyard", "Kitchen"],
     description: "Charming room in a historic building with original architectural features.",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=400&h=300&fit=crop",
     availableFrom: "March 20, 2024",
     roommates: 2
   },
@@ -149,7 +149,7 @@ const mockRooms = [
     type: "Private Room",
     amenities: ["Wi-Fi", "Skylight", "Storage", "Kitchen"],
     description: "Charming attic room with skylights and cozy atmosphere in historic area.",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=400&h=300&fit=crop",
     availableFrom: "March 12, 2024",
     roommates: 2
   },
@@ -173,7 +173,7 @@ const mockRooms = [
     type: "Private Room",
     amenities: ["Wi-Fi", "Art Studio", "Natural Light", "Gallery Access"],
     description: "Perfect for artists! Room in a creative hub with studio space and gallery.",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&h=300&fit=crop",
     availableFrom: "March 8, 2024",
     roommates: 4
   },
@@ -185,7 +185,7 @@ const mockRooms = [
     type: "Shared Room",
     amenities: ["Wi-Fi", "Shopping Access", "Food Court", "Parking"],
     description: "Convenient location next to major shopping center with easy access to amenities.",
-    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop",
     availableFrom: "April 15, 2024",
     roommates: 2
   },
@@ -197,7 +197,7 @@ const mockRooms = [
     type: "Shared Room",
     amenities: ["Wi-Fi", "Study Rooms", "Common Kitchen", "Library"],
     description: "Affordable student housing with cooperative living and study facilities.",
-    image: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
     availableFrom: "February 18, 2024",
     roommates: 5
   },
@@ -209,7 +209,7 @@ const mockRooms = [
     type: "Private Room",
     amenities: ["Wi-Fi", "Business Center", "Concierge", "Gym", "Spa"],
     description: "Premium accommodation for business professionals with executive amenities.",
-    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=300&fit=crop",
     availableFrom: "March 25, 2024",
     roommates: 1
   },
@@ -221,7 +221,7 @@ const mockRooms = [
     type: "Private Room",
     amenities: ["Wi-Fi", "High Ceilings", "Industrial Design", "Workspace"],
     description: "Unique living space in converted warehouse with industrial aesthetic.",
-    image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop",
     availableFrom: "April 8, 2024",
     roommates: 3
   }
