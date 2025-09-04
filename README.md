@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/b452435c-db14-4cba-a205-fd2a7fb251fa
+**URL**: https://roomate-finder-lyart.vercel.app/
 
 
 
